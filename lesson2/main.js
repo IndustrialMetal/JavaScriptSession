@@ -1,16 +1,16 @@
 // - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 
 let rockSubgenres = ['alternative', 'christian', 'death', 'hard rock', 'garage', 'heavy metal', 'indie', 'progressive', 'punk', 'experimental']
-console.log('alternative');
-console.log('christian');
-console.log('death');
-console.log('hard rock');
-console.log('garage');
-console.log('heavy metal');
-console.log('indie');
-console.log('progressive');
-console.log('punk');
-console.log('experimental');
+console.log(rockSubgenres[0]);
+console.log(rockSubgenres[1]);
+console.log(rockSubgenres[2]);
+console.log(rockSubgenres[3]);
+console.log(rockSubgenres[4]);
+console.log(rockSubgenres[5]);
+console.log(rockSubgenres[6]);
+console.log(rockSubgenres[7]);
+console.log(rockSubgenres[8]);
+console.log(rockSubgenres[9]);
 
 // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
 
@@ -38,19 +38,50 @@ let book1st = {
     title: 'Island',
     pageCount: 334,
     genre: 'novel',
-    author: ['Merle', 96],
+    authors: [
+        {
+            name: 'Merle',
+            age: 96,
+        },
+        {
+            name: 'Jones',
+            age: 73,
+        }
+    ],
 }
 let book2nd = {
     title: 'Spartacus',
     pageCount: 400,
     genre: 'novel',
-    author: ['Giovagnoli', 77],
+    authors: [
+        {
+            name: 'Giovagnoli',
+            age: 77,
+        },
+        {
+            name: 'Donatello',
+            age: 51,
+        }
+    ],
 }
 let book3rd = {
     title: 'Emotional Intelligence',
     pageCount: 512,
     genre: 'psychology',
-    author: ['Goleman', 76],
+    authors: [
+        {
+            name: 'Goleman',
+            age: 76,
+        },
+        {
+            name: 'Schteiner',
+            age: 70,
+        },
+        {
+            name: 'Bush',
+            age: 80,
+        }
+    ],
 }
 
 
