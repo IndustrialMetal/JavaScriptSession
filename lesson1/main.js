@@ -68,5 +68,5 @@ let m = false;
     console.log(messageFirst);
     let messageSecond = prompt(`What is your middle name?`);
     console.log(messageSecond);
-    let messageThird = prompt(`How old are you?`)
+    let messageThird = +prompt(`How old are you?`)
     console.log(messageThird);
