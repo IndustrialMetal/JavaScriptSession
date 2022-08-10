@@ -57,15 +57,13 @@
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 
-// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Не думаю, що це важко, але я не осилив 2ий аргумент.
+
 // function ulka(textLi, liCount) {
-//     document.write(`<ul>
-//         <li>${textLi}</li>
-//         <li>${textLi}</li>
-//         <li>${textLi}</li>
-//         </ul>`)
-//     for (let i = 0; i < textLi.length; i++) {
-//         const textLiElement = textLi[i];
+//     document.write(`<ul>`);
+//     for (let i = 0; i < liCount; i++) {
+//         const textLiElement = liCount[i];
+//         document.write(`<li>${textLi}</li>`);
+//         document.write(`</ul>`);
 //     }
 // }
 // ulka('Something in li', 5);
@@ -129,7 +127,7 @@
 // console.log(min(arr));
 
 // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
-// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Тут, скоріш за все, фігню написав.
+
 // let arr = [10, 20, 30];
 // function sumArrayElements(arraySum) {
 //     for (let i = 0; i < arraySum.length; i++) {
