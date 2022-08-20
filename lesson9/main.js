@@ -38,7 +38,7 @@
 // ];
 // Проітерувати його, створиши для кожного об'єкту  масиву <div class='member'> та наповнити його данними з об'єкту.
 //     Якщо людською мовою: під кожного члена родини зробити блок та наповнити його інформацією з цього об'єкту
-
+//
 // let firstDiv = document.getElementsByClassName('firstDiv')[0];
 // for (const simpson of simpsons) {
 //     let div = document.createElement('div');
@@ -123,29 +123,22 @@
 //
 // Створити для кожного елементу масиву свій блок, блок розділити блоками, в яких будуть зберігатись значення окремих властивостей, для властивості modules зробити список з елементами
 // Приклад структири знаходиться у файлі example.png
-
+//
+// ???????????????????????????????????????????????????????????????????? Зміг тільки так додати div до кожного елементу об'єкта. А для властивості modules зробити список з елементами теж не знаю як.
 // let mainDiv = document.getElementsByClassName('firstDiv')[0];
 // for (const coursesArrayElement of coursesArray) {
 //     let divForElement = document.createElement('div');
 //     mainDiv.appendChild(divForElement);
-//     for (const coursesArrayElementSub in coursesArrayElement) {
-//         console.log(coursesArrayElementSub);
-//         let divForSub = document.createElement('div');
-//         divForElement.appendChild(divForSub);
-//         divForSub.innerText = `${coursesArrayElementSub}`;
-//     }
-// }
+//     divForElement.innerHTML = `<div>${coursesArrayElement.title}</div> <div>${coursesArrayElement.monthDuration}</div>  <div>${coursesArrayElement.hourDuration}</div> <div>${coursesArrayElement.modules}</div>`}
 
 
-// ------------------
-//
-//
+
 //     - створити блок,
 //     - додати йому класи wrap, collapse, alpha, beta
 // - додати стилі(довільні значення) : колір фону, колір тексту, розмір тексту
 // - додати цей блок в body.
 // - клонувати його повністю, та додати клон в body.
-
+//
 // let div = document.createElement('div');
 // div.classList.add('wrap', 'collapse', 'alpha', 'beta');
 // document.body.appendChild(div);
@@ -155,12 +148,11 @@
 
 
 
-
 // - Є масив:
 //     ['Main','Products','About us','Contacts']
 // Взяти файл template1.html та додати в нього скріпт котрий для кожного елементу масиву створює li та додає його до блоку .menu
 // Завдання робити через цикли.
-
+//
 // let ulFind = document.getElementsByClassName('menu')[0];
 // let arr = ['Main','Products','About us','Contacts'];
 // for (const string of arr) {
@@ -171,8 +163,28 @@
 
 
 
+// - Є масив
+// let coursesAndDurationArray = [
+//     {title: 'JavaScript Complex', monthDuration: 5},
+//     {title: 'Java Complex', monthDuration: 6},
+//     {title: 'Python Complex', monthDuration: 6},
+//     {title: 'QA Complex', monthDuration: 4},
+//     {title: 'FullStack', monthDuration: 7},
+//     {title: 'Frontend', monthDuration: 4}
+// ];
+// // Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
+// // Завдання робити через цикли.
+//
+// let findDiv = document.getElementsByClassName('firstDiv')[0];
+// for (const coursesAndDurationArrayElement of coursesAndDurationArray) {
+//     let div = document.createElement('div');
+//     div.innerText = `${coursesAndDurationArrayElement.title} - ${coursesAndDurationArrayElement.monthDuration}`;
+//     findDiv.appendChild(div);
+// }
 
-// - Є масив
+
+
+// // - Є масив
 // let coursesAndDurationArray = [
 //     {title: 'JavaScript Complex', monthDuration: 5},
 //     {title: 'Java Complex', monthDuration: 6},
@@ -181,33 +193,60 @@
 //     {title: 'FullStack', monthDuration: 7},
 //     {title: 'Frontend', monthDuration: 4}
 // ];
-// Для кожного елементу масиву зробити блок в якому вивести інформацію про title та monthDuration
-// Завдання робити через цикли.
-//
-// - Є масив
-// let coursesAndDurationArray = [
-//     {title: 'JavaScript Complex', monthDuration: 5},
-//     {title: 'Java Complex', monthDuration: 6},
-//     {title: 'Python Complex', monthDuration: 6},
-//     {title: 'QA Complex', monthDuration: 4},
-//     {title: 'FullStack', monthDuration: 7},
-//     {title: 'Frontend', monthDuration: 4}
-// ];
-//
 //
 // За допомоги скріпта для кожного елементу масиву зробити <div class='item'> ,  в якому буде <h1 class='heading'>  з title  елементу, та <p class='description'> з monthDuration елементу.
 //     Завдання робити через цикли.
 //
-//
-//
-// -----------
-//
+// let findDiv = document.getElementsByClassName('firstDiv')[0];
+// for (const coursesAndDurationArrayElement of coursesAndDurationArray) {
+//     let div = document.createElement('div');
+//     div.classList.add('item');
+//     findDiv.appendChild(div);
+//     let h1 = document.createElement('h1');
+//     h1.classList.add('heading');
+//     h1.innerText = `${coursesAndDurationArrayElement.title}`
+//     div.appendChild(h1);
+//     let p = document.createElement('p');
+//     p.classList.add('description');
+//     p.innerText = `${coursesAndDurationArrayElement.monthDuration}`;
+//     div.appendChild(p);
+// }
+
+
+
 //     - Створити довільний елемент з id = text.  Використовуючи JavaScript, зробіть так, щоб при натисканні на кнопку зникав елемент з id="text".
 //
-//
+// let div = document.createElement('div');
+// div.id = 'text';
+// let findDiv = document.getElementsByClassName('firstDiv')[0];
+// div.innerText = 'Some text';
+// findDiv.appendChild(div);
+// let button = document.createElement('button');
+// button.innerText = 'Press me';
+// findDiv.appendChild(button);
+// button.onclick = function (e) {
+//     div.remove();
+// }
+
+
+
 //     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
 //
-//
+// ???????????????????????????????????????????????????????? Чомусь вік undefined, пробував багато, але не виходить. FindInput.value теж не спрацював або value не там вписував.
+// let findButton = document.getElementsByClassName('button')[0];
+// let findInput = document.getElementById('a1')[0];
+// findButton.onclick = function (e) {
+//         if (findInput > 0 && findInput < 19) {
+//             console.log(`Your age is ${findInput}, access is not allowed`)
+//         } else if (findInput === 0) {
+//             console.log(`Your age is ${findInput}, access is not allowed`)
+//         } else {
+//             console.log(`Your age is ${findInput}, access is allowed`)
+//         }
+// }
+
+
+
 // *** Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
