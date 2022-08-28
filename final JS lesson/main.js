@@ -16,12 +16,9 @@ fetch('https://jsonplaceholder.typicode.com/users')
             let a = document.createElement('a');
             a.href =`user-details.html?id=${user.id}`
             div.appendChild(a);
-            a.innerText = 'Details';
+            a.innerText = ' Details';
         }
     })
-
-
-
 
 
 //     На странице post-details.html:

@@ -6,17 +6,20 @@
 
 let url = new URL(location.href);
 let id = url.searchParams.get('id');
-fetch(`https://jsonplaceholder.typicode.com/users`)
+
+
+fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
     .then((response) => response.json())
-    .then(data => {
-        let div = document.createElement('div');
-        document.body.appendChild(div);
-        for (const dataElement of data) {
-            // for (const dataElementKey in dataElement) {
-            //     div.innerText = `${dataElementKey}`
-            // // }
-            div.innerText = `${dataElement}`;
-            // console.log(dataElement);
+    .then(users => {
+        let ul = document.createElement('ul')
+        for (const user of users) {
+            let li = document.createElement('li');
+            li.innerText = user.title;
+            ul.appendChild(li);
+            let a = document.createElement('a');
+            ul.appendChild(a);
+            a.href =`post-details.html?id=${user.id}`
+            a.innerText = 'Post details'
         }
-        }
-    )
+        document.body.appendChild(ul);
+    })
