@@ -11,15 +11,46 @@ let id = url.searchParams.get('id');
 fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
     .then((response) => response.json())
     .then(users => {
-        let ul = document.createElement('ul')
-        for (const user of users) {
-            let li = document.createElement('li');
-            li.innerText = user.title;
-            ul.appendChild(li);
-            let a = document.createElement('a');
-            ul.appendChild(a);
-            a.href =`post-details.html?id=${user.id}`
-            a.innerText = 'Post details'
+        let div = document.createElement('div')
+        document.body.appendChild(div)
+
+        function recursion(item){
+            for (const itemElement in item) {
+                if (typeof item[itemElement] !=='object'){
+                    let p = document.createElement('p')
+                    p.append(`${itemElement} - ${item[itemElement]}`)
+                    div.appendChild(p)
+                } else {
+                    recursion(item[itemElement]);
+                }
+            }
         }
-        document.body.appendChild(ul);
+        recursion(users);
     })
+
+
+let btnDiv = document.createElement('div')
+let btn = document.createElement('button')
+btn.innerText = 'Post of current user'
+btnDiv.appendChild(btn)
+document.body.appendChild(btnDiv)
+
+btn.onclick = function (){
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}/posts`)
+        .then(response => response.json())
+        .then(comments => {
+            let divForAll = document.createElement('div')
+                document.body.appendChild(divForAll)
+            for (const comment of comments) {
+                let div = document.createElement('div')
+                div.innerText = `${comment.id} ----- ${comment.title} ---- ${comment.body}`
+                let btnPosts = document.createElement('button')
+                btnPosts.innerText = 'Press'
+                btnPosts.onclick = function () {
+                    location.href = `post-details.js?id=${comment.id}`
+                }
+                div.append(btnPosts)
+                divForAll.appendChild(div)
+            }
+        })
+}
